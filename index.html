@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opções com Imagens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha uma opção :)</h1>
+        <div class="options">
+            <div class="select-wrapper">
+                <select id="optionSelect" onchange="showSelectedImage()">
+                    <option value="imgdatabase/360p.png">360p</option>
+                    <option value="imgdatabase/720p.png">720p</option>
+                    <option value="imgdatabase/1080.png">1080p</option>
+                    <option value="imgdatabase/4k.png">4K</option>
+                </select>
+            </div>
+        </div>
+        <div class="image-container">
+            <img id="selectedImage" src="" alt="Imagem selecionada">
+        </div>
+
+        <div class="text">
+          <p style="font-size: 20px;">Por: <b>Italo :)</b></p>
+      </div>
+    </div>
+
+    <script>
+        function showSelectedImage() {
+            var selectBox = document.getElementById("optionSelect");
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            var selectedImage = document.getElementById("selectedImage");
+            selectedImage.src = selectedValue;
+        }
+
+        // Chamar a função showSelectedImage() uma vez quando a página é carregada
+        showSelectedImage();
+    </script>
+</body>
+</html>
